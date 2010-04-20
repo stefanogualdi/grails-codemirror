@@ -1,5 +1,9 @@
 package org.gualdi.grails.plugins.codemirror
 
+/**
+ * @author Stefano Gualdi <stefano.gualdi@gmail.com>
+ */
+
 class CodemirrorTagLib {
 	
 	static namespace = "codemirror"
