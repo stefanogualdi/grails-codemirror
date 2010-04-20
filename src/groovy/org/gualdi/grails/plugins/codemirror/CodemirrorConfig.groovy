@@ -66,14 +66,12 @@ class CodemirrorConfig {
 		}
 	}
 
+	// TODO: refactor
 	private checkTypesConfig(attrs) {
-		// You can do it better!!!!!
-
 		def parsers = []
 		def stylesheets = []
         attrs?.each { key, value ->
 			if (key in EDITOR_TYPES.keySet() && value == "true") {
-				// TODO: Create helper which take a closure to handle path adding 
 				if (EDITOR_TYPES[key]['parserfile'] instanceof ArrayList) {
 					EDITOR_TYPES[key]['parserfile'].each { v ->
 						if (!(v in parsers)) {
@@ -125,14 +123,6 @@ class CodemirrorConfig {
 
 	def addComplexConfigItem(var, value) {
 		this.config[var] = value
-		/*
-        if (var in ALLOWED_CONFIG_ITEMS || var.startsWith('toolbar_')) {
-			this.config[var] = value
-		}
-		else {
-		    throw new UnknownOptionException("Unknown option: ${var}. Option names are case sensitive! Check the spelling.")
-        }
-		*/
     }
 
     def getConfiguration() {
@@ -155,5 +145,4 @@ class CodemirrorConfig {
 	
         return configuration
     }
-
 }
